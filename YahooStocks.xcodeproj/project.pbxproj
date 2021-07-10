@@ -23,6 +23,17 @@
 		7C6F9A8726991FC700CC406C /* RestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9A8226991FC700CC406C /* RestEncoding.swift */; };
 		7C6F9A8826991FC700CC406C /* RestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9A8326991FC700CC406C /* RestHeader.swift */; };
 		7C6F9A8926991FC700CC406C /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9A8426991FC700CC406C /* RestClient.swift */; };
+		7C6F9AFE2699235500CC406C /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6F9AF52699235500CC406C /* API.framework */; };
+		7C6F9B052699235500CC406C /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B042699235500CC406C /* APITests.swift */; };
+		7C6F9B072699235500CC406C /* API.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C6F9AF72699235500CC406C /* API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C6F9B0A2699235500CC406C /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6F9AF52699235500CC406C /* API.framework */; };
+		7C6F9B0B2699235500CC406C /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6F9AF52699235500CC406C /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7C6F9B18269923A800CC406C /* Codable+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B12269923A800CC406C /* Codable+Utils.swift */; };
+		7C6F9B19269923A800CC406C /* BaseRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B13269923A800CC406C /* BaseRequestModel.swift */; };
+		7C6F9B1A269923A800CC406C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B14269923A800CC406C /* API.swift */; };
+		7C6F9B1B269923A800CC406C /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B15269923A800CC406C /* Properties.swift */; };
+		7C6F9B1C269923A800CC406C /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B16269923A800CC406C /* APIResponse.swift */; };
+		7C6F9B1D269923A800CC406C /* Data+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F9B17269923A800CC406C /* Data+Decodable.swift */; };
 		943A397F86310713336A8A48 /* Pods_YahooStocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD63555E2554AF56E65C2CC /* Pods_YahooStocks.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +59,27 @@
 			remoteGlobalIDString = 7C6F9A6126991FB500CC406C;
 			remoteInfo = RestClient;
 		};
+		7C6F9AFF2699235500CC406C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C6F9A3E26991B9E00CC406C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C6F9AF42699235500CC406C;
+			remoteInfo = API;
+		};
+		7C6F9B012699235500CC406C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C6F9A3E26991B9E00CC406C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C6F9A4526991B9E00CC406C;
+			remoteInfo = YahooStocks;
+		};
+		7C6F9B082699235500CC406C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C6F9A3E26991B9E00CC406C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C6F9AF42699235500CC406C;
+			remoteInfo = API;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +90,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7C6F9A7826991FB500CC406C /* RestClient.framework in Embed Frameworks */,
+				7C6F9B0B2699235500CC406C /* API.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +117,18 @@
 		7C6F9A8226991FC700CC406C /* RestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestEncoding.swift; sourceTree = "<group>"; };
 		7C6F9A8326991FC700CC406C /* RestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestHeader.swift; sourceTree = "<group>"; };
 		7C6F9A8426991FC700CC406C /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		7C6F9AF52699235500CC406C /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C6F9AF72699235500CC406C /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		7C6F9AF82699235500CC406C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6F9AFD2699235500CC406C /* APITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C6F9B042699235500CC406C /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		7C6F9B062699235500CC406C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6F9B12269923A800CC406C /* Codable+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Utils.swift"; sourceTree = "<group>"; };
+		7C6F9B13269923A800CC406C /* BaseRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequestModel.swift; sourceTree = "<group>"; };
+		7C6F9B14269923A800CC406C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7C6F9B15269923A800CC406C /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		7C6F9B16269923A800CC406C /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		7C6F9B17269923A800CC406C /* Data+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Decodable.swift"; sourceTree = "<group>"; };
 		9AD63555E2554AF56E65C2CC /* Pods_YahooStocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YahooStocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0BEADDAD36A74206D41DF5 /* Pods-YahooStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YahooStocks.debug.xcconfig"; path = "Target Support Files/Pods-YahooStocks/Pods-YahooStocks.debug.xcconfig"; sourceTree = "<group>"; };
 		FFACF6D82D15F8B3AEC91085 /* Pods-YahooStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YahooStocks.release.xcconfig"; path = "Target Support Files/Pods-YahooStocks/Pods-YahooStocks.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				943A397F86310713336A8A48 /* Pods_YahooStocks.framework in Frameworks */,
+				7C6F9B0A2699235500CC406C /* API.framework in Frameworks */,
 				7C6F9A7726991FB500CC406C /* RestClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +157,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C6F9A6B26991FB500CC406C /* RestClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AF22699235500CC406C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AFA2699235500CC406C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6F9AFE2699235500CC406C /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +201,8 @@
 				7C6F9A4826991B9E00CC406C /* YahooStocks */,
 				7C6F9A6326991FB500CC406C /* RestClient */,
 				7C6F9A7026991FB500CC406C /* RestClientTests */,
+				7C6F9AF62699235500CC406C /* API */,
+				7C6F9B032699235500CC406C /* APITests */,
 				7C6F9A4726991B9E00CC406C /* Products */,
 				150BA56F366D3B3A9F5634EF /* Pods */,
 				27E08202C6F0209B4F702A6A /* Frameworks */,
@@ -152,6 +215,8 @@
 				7C6F9A4626991B9E00CC406C /* YahooStocks.app */,
 				7C6F9A6226991FB500CC406C /* RestClient.framework */,
 				7C6F9A6A26991FB500CC406C /* RestClientTests.xctest */,
+				7C6F9AF52699235500CC406C /* API.framework */,
+				7C6F9AFD2699235500CC406C /* APITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +258,30 @@
 			path = RestClientTests;
 			sourceTree = "<group>";
 		};
+		7C6F9AF62699235500CC406C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7C6F9B14269923A800CC406C /* API.swift */,
+				7C6F9B16269923A800CC406C /* APIResponse.swift */,
+				7C6F9B13269923A800CC406C /* BaseRequestModel.swift */,
+				7C6F9B12269923A800CC406C /* Codable+Utils.swift */,
+				7C6F9B17269923A800CC406C /* Data+Decodable.swift */,
+				7C6F9B15269923A800CC406C /* Properties.swift */,
+				7C6F9AF72699235500CC406C /* API.h */,
+				7C6F9AF82699235500CC406C /* Info.plist */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7C6F9B032699235500CC406C /* APITests */ = {
+			isa = PBXGroup;
+			children = (
+				7C6F9B042699235500CC406C /* APITests.swift */,
+				7C6F9B062699235500CC406C /* Info.plist */,
+			);
+			path = APITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -201,6 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C6F9A7426991FB500CC406C /* RestClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AF02699235500CC406C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6F9B072699235500CC406C /* API.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +319,7 @@
 			);
 			dependencies = (
 				7C6F9A7626991FB500CC406C /* PBXTargetDependency */,
+				7C6F9B092699235500CC406C /* PBXTargetDependency */,
 			);
 			name = YahooStocks;
 			productName = YahooStocks;
@@ -265,6 +363,43 @@
 			productReference = 7C6F9A6A26991FB500CC406C /* RestClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7C6F9AF42699235500CC406C /* API */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C6F9B0C2699235500CC406C /* Build configuration list for PBXNativeTarget "API" */;
+			buildPhases = (
+				7C6F9AF02699235500CC406C /* Headers */,
+				7C6F9AF12699235500CC406C /* Sources */,
+				7C6F9AF22699235500CC406C /* Frameworks */,
+				7C6F9AF32699235500CC406C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = API;
+			productName = API;
+			productReference = 7C6F9AF52699235500CC406C /* API.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C6F9AFC2699235500CC406C /* APITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C6F9B0F2699235500CC406C /* Build configuration list for PBXNativeTarget "APITests" */;
+			buildPhases = (
+				7C6F9AF92699235500CC406C /* Sources */,
+				7C6F9AFA2699235500CC406C /* Frameworks */,
+				7C6F9AFB2699235500CC406C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C6F9B002699235500CC406C /* PBXTargetDependency */,
+				7C6F9B022699235500CC406C /* PBXTargetDependency */,
+			);
+			name = APITests;
+			productName = APITests;
+			productReference = 7C6F9AFD2699235500CC406C /* APITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -282,6 +417,14 @@
 						LastSwiftMigration = 1250;
 					};
 					7C6F9A6926991FB500CC406C = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 7C6F9A4526991B9E00CC406C;
+					};
+					7C6F9AF42699235500CC406C = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
+					7C6F9AFC2699235500CC406C = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 7C6F9A4526991B9E00CC406C;
 					};
@@ -303,6 +446,8 @@
 				7C6F9A4526991B9E00CC406C /* YahooStocks */,
 				7C6F9A6126991FB500CC406C /* RestClient */,
 				7C6F9A6926991FB500CC406C /* RestClientTests */,
+				7C6F9AF42699235500CC406C /* API */,
+				7C6F9AFC2699235500CC406C /* APITests */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +471,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7C6F9A6826991FB500CC406C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AF32699235500CC406C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AFB2699235500CC406C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,6 +566,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7C6F9AF12699235500CC406C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6F9B1B269923A800CC406C /* Properties.swift in Sources */,
+				7C6F9B1D269923A800CC406C /* Data+Decodable.swift in Sources */,
+				7C6F9B19269923A800CC406C /* BaseRequestModel.swift in Sources */,
+				7C6F9B1A269923A800CC406C /* API.swift in Sources */,
+				7C6F9B1C269923A800CC406C /* APIResponse.swift in Sources */,
+				7C6F9B18269923A800CC406C /* Codable+Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C6F9AF92699235500CC406C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6F9B052699235500CC406C /* APITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -424,6 +604,21 @@
 			isa = PBXTargetDependency;
 			target = 7C6F9A6126991FB500CC406C /* RestClient */;
 			targetProxy = 7C6F9A7526991FB500CC406C /* PBXContainerItemProxy */;
+		};
+		7C6F9B002699235500CC406C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C6F9AF42699235500CC406C /* API */;
+			targetProxy = 7C6F9AFF2699235500CC406C /* PBXContainerItemProxy */;
+		};
+		7C6F9B022699235500CC406C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C6F9A4526991B9E00CC406C /* YahooStocks */;
+			targetProxy = 7C6F9B012699235500CC406C /* PBXContainerItemProxy */;
+		};
+		7C6F9B092699235500CC406C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C6F9AF42699235500CC406C /* API */;
+			targetProxy = 7C6F9B082699235500CC406C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -706,6 +901,107 @@
 			};
 			name = Release;
 		};
+		7C6F9B0D2699235500CC406C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = API/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C6F9B0E2699235500CC406C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = API/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7C6F9B102699235500CC406C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				INFOPLIST_FILE = APITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YahooStocks.app/YahooStocks";
+			};
+			name = Debug;
+		};
+		7C6F9B112699235500CC406C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3U82SFTT2K;
+				INFOPLIST_FILE = APITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulassancak.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YahooStocks.app/YahooStocks";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -741,6 +1037,24 @@
 			buildConfigurations = (
 				7C6F9A7C26991FB500CC406C /* Debug */,
 				7C6F9A7D26991FB500CC406C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C6F9B0C2699235500CC406C /* Build configuration list for PBXNativeTarget "API" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C6F9B0D2699235500CC406C /* Debug */,
+				7C6F9B0E2699235500CC406C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C6F9B0F2699235500CC406C /* Build configuration list for PBXNativeTarget "APITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C6F9B102699235500CC406C /* Debug */,
+				7C6F9B112699235500CC406C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
