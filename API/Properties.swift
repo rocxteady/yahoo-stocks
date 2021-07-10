@@ -8,8 +8,7 @@
 import Foundation
 
 public struct Properties {
-    public static let baseURL = "https://api.themoviedb.org/3"
-    public static let baseFileURL = "https://image.tmdb.org/t/p"
-    public static let apiKey = "fd2b04342048fa2d5f728561866ad52a"
-    public static let headers: [String: String] = [:]
+    public static let baseURL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com"
+    public static let apiKey = "2384700403msh44eea7176b21a86p1af5c9jsn7b9f5bf4e636"
+    public static let headers: [String: String] = ["x-rapidapi-key":Properties.apiKey]
 }
