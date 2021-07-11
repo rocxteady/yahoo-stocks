@@ -20,7 +20,9 @@ final class StockSummaryViewModel: ViewModelProtocol {
     var timer: Disposable?
     var isDisplaying: Bool = false {
         didSet {
-            isDisplaying ? startTimer() : stopTimer()
+            if isDisplaying {
+                getData()
+            }
         }
     }
     

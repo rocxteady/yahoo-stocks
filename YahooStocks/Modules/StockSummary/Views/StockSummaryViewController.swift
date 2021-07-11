@@ -15,11 +15,20 @@ class StockSummaryViewController: UITableViewController {
 
     private let disposeBag = DisposeBag()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.isDisplaying = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel?.isDisplaying = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bind()
-        getData()
      }
     
     private func setupUI() {
