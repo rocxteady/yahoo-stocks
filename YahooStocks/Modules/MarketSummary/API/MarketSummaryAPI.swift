@@ -11,7 +11,7 @@ import RestClient
 
 class MarketSummaryAPI: API {
     
-    public typealias ResponseModel = Market
+    public typealias ResponseModel = MarketSummaryResponse
 
     public typealias RequestModel = BaseRequestModel
         
