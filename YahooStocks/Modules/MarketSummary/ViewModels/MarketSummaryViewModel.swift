@@ -9,45 +9,31 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol ViewModelProtocol {
-    
-    associatedtype Model = Decodable
-    
-    var data: BehaviorRelay<[Model]> { get }
-    var allData: BehaviorRelay<[Model]> { get }
-    var searchTerm: String { get set }
-    var disposeBag: DisposeBag { get }
-    func getData(shouldRepeat: Bool)
-    func search(searchTerm: String)
-    
-}
-
-class MarketSummaryViewModel: ViewModelProtocol {
+final class MarketSummaryViewModel: ViewModelProtocol {
     
     let data = BehaviorRelay<[Market]>(value: [])
     let allData = BehaviorRelay<[Market]>(value: [])
+    let isGettingData = BehaviorRelay<Bool>(value: false)
+    let presentErrorSubject = PublishSubject<String>()
     var searchTerm: String = ""
     let disposeBag = DisposeBag()
-    
-    func getData(shouldRepeat: Bool = true) {
-        guard shouldRepeat else {
-            getData()
-            return
+    var timer: Disposable?
+    var isDisplaying: Bool = false {
+        didSet {
+            isDisplaying ? startTimer() : stopTimer()
         }
-        getData()
-        Observable<Int>.interval(.seconds(8), scheduler: MainScheduler.instance)
-            .subscribe { [weak self] _ in
-                self?.getData()
-            }.disposed(by: disposeBag)
     }
     
-    private func getData() {
+    func getData() {
+        isGettingData.accept(true)
         let api = MarketSummaryAPI()
         api.rx_start().subscribe { [weak self] response in
             self?.allData.accept(response.responseModel?.marketSummaryAndSparkResponse.result ?? [])
             self?.search(searchTerm: self?.searchTerm ?? "")
-        } onError: { error in
-            print(error.localizedDescription)
+        } onError: { [weak self] error in
+            self?.presentErrorSubject.onNext(error.localizedDescription)
+        } onCompleted: { [weak self] in
+            self?.isGettingData.accept(false)
         }.disposed(by: disposeBag)
     }
     
@@ -58,6 +44,10 @@ class MarketSummaryViewModel: ViewModelProtocol {
             return
         }
         data.accept(allData.value.filter({ $0.name.contains(searchTerm) }))
+    }
+    
+    deinit {
+        timer?.dispose()
     }
     
 }

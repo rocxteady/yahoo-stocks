@@ -9,6 +9,6 @@ import Foundation
 
 public struct Properties {
     public static let baseURL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com"
-    public static let apiKey = "2384700403msh44eea7176b21a86p1af5c9jsn7b9f5bf4e636"
+    public static let apiKey = "7a305d7a89mshe440385054337e0p1e31ffjsn26e2c6a0adec"
     public static let headers: [String: String] = ["x-rapidapi-key":Properties.apiKey]
 }
