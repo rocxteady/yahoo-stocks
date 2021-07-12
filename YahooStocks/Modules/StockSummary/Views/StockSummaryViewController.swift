@@ -43,9 +43,9 @@ class StockSummaryViewController: UITableViewController {
     }
 
     private func bind() {
-        viewModel?.data.bind(to: tableView.rx.items(cellIdentifier: "StockCell", cellType: UITableViewCell.self)) { (row, model, cell) in
-            cell.textLabel?.text = model["title"]
-            cell.detailTextLabel?.text = model["value"]
+        viewModel?.allData.bind(to: tableView.rx.items(cellIdentifier: "StockCell", cellType: UITableViewCell.self)) { (row, model, cell) in
+            cell.textLabel?.text = model.title
+            cell.detailTextLabel?.text = model.value
         }.disposed(by: disposeBag)
         
         refreshControl?.rx.controlEvent(.valueChanged).subscribe { [weak self] _ in

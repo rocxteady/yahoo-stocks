@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class MarketSummaryViewModel: ViewModelProtocol {
+final class MarketSummaryViewModel: ViewModelProtocol, TimerProtocol, SearchProtocol {
     
-    let data = BehaviorRelay<[Market]>(value: [])
+    let filteredData = BehaviorRelay<[Market]>(value: [])
     let allData = BehaviorRelay<[Market]>(value: [])
     let isGettingData = BehaviorRelay<Bool>(value: false)
     let presentErrorSubject = PublishSubject<String>()
@@ -22,6 +22,10 @@ final class MarketSummaryViewModel: ViewModelProtocol {
         didSet {
             isDisplaying ? startTimer() : stopTimer()
         }
+    }
+    
+    deinit {
+        timer?.dispose()
     }
     
     func getData() {
@@ -40,14 +44,14 @@ final class MarketSummaryViewModel: ViewModelProtocol {
     func search(searchTerm: String = "") {
         self.searchTerm = searchTerm
         guard !searchTerm.isEmpty else {
-            data.accept(allData.value)
+            filteredData.accept(allData.value)
             return
         }
-        data.accept(allData.value.filter({ $0.name.contains(searchTerm) }))
+        filteredData.accept(allData.value.filter({ $0.name.contains(searchTerm) }))
     }
     
-    deinit {
-        timer?.dispose()
+    func fire() {
+        getData()
     }
     
 }

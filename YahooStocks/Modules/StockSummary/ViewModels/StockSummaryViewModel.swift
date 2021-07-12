@@ -11,13 +11,10 @@ import RxCocoa
 
 final class StockSummaryViewModel: ViewModelProtocol {
         
-    let data = BehaviorRelay<[[String: String]]>(value: [])
-    let allData = BehaviorRelay<[[String: String]]>(value: [])
+    let allData = BehaviorRelay<[StockSummaryItem]>(value: [])
     let isGettingData = BehaviorRelay<Bool>(value: false)
     let presentErrorSubject = PublishSubject<String>()
-    var searchTerm: String = ""
     let disposeBag = DisposeBag()
-    var timer: Disposable?
     var isDisplaying: Bool = false {
         didSet {
             if isDisplaying {
@@ -36,39 +33,27 @@ final class StockSummaryViewModel: ViewModelProtocol {
         isGettingData.accept(true)
         let api = StockSummaryAPI(parameters: StockSummaryRequestModel(symbol: symbol))
         api.rx_start().subscribe { [weak self] response in
-            self?.isGettingData.accept(false)
             guard let price = response.responseModel?.price else { return }
             var allData = [
-                ["title": "Symbol", "value": price.symbol],
-                ["title": "Name", "value": price.shortName],
-                ["title": "Price", "value": price.regularMarketPrice.fmt],
-                ["title": "Open", "value": price.regularMarketOpen.fmt],
-                ["title": "High", "value": price.regularMarketDayHigh.fmt],
-                ["title": "Low", "value": price.regularMarketDayLow.fmt]
+                StockSummaryItem(title: "Symbol", value: price.symbol),
+                StockSummaryItem(title: "Name", value: price.shortName),
+                StockSummaryItem(title: "Price", value: price.regularMarketPrice.fmt),
+                StockSummaryItem(title: "Open", value: price.regularMarketOpen.fmt),
+                StockSummaryItem(title: "High", value: price.regularMarketDayHigh.fmt),
+                StockSummaryItem(title: "Low", value: price.regularMarketDayLow.fmt)
             ]
-            if price.marketCap.raw != 0 {
-                allData.append(["title": "Volume", "value": price.regularMarketVolume.fmt])
+            if price.regularMarketVolume.raw != 0 {
+                allData.append(StockSummaryItem(title: "Volume", value: price.regularMarketVolume.fmt))
             }
             if price.marketCap.raw != 0 {
-                allData.append(["title": "Market Cap", "value": price.marketCap.fmt])
+                allData.append(StockSummaryItem(title: "Market Cap", value: price.marketCap.fmt))
             }
             self?.allData.accept(allData)
-            self?.search(searchTerm: self?.searchTerm ?? "")
         } onError: { [weak self] error in
             self?.presentErrorSubject.onNext(error.localizedDescription)
+        } onCompleted: { [weak self] in
+            self?.isGettingData.accept(false)
         }.disposed(by: disposeBag)
     }
-    
-    func search(searchTerm: String = "") {
-        self.searchTerm = searchTerm
-        guard !searchTerm.isEmpty else {
-            data.accept(allData.value)
-            return
-        }
-        data.accept(allData.value.filter({ $0["title"]?.contains(searchTerm) ?? false }))
-    }
-    
-    deinit {
-        timer?.dispose()
-    }
+
 }

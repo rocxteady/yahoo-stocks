@@ -49,7 +49,7 @@ class MarketSummaryViewController: UITableViewController {
     }
 
     private func bind() {
-        viewModel.data.bind(to: tableView.rx.items(cellIdentifier: "MarketCell", cellType: UITableViewCell.self)) { (row, model, cell) in
+        viewModel.filteredData.bind(to: tableView.rx.items(cellIdentifier: "MarketCell", cellType: UITableViewCell.self)) { (row, model, cell) in
             cell.textLabel?.text = model.name
             cell.detailTextLabel?.text = model.regularMarketPreviousClose.fmt
         }.disposed(by: disposeBag)
@@ -100,7 +100,7 @@ class MarketSummaryViewController: UITableViewController {
         guard segue.identifier == "stockDetail",
               let indexPath = tableView.indexPathForSelectedRow,
               let stockSummaryViewController = segue.destination as? StockSummaryViewController else { return }
-        let market = viewModel.data.value[indexPath.row]
+        let market = viewModel.filteredData.value[indexPath.row]
         let stockViewModel = StockSummaryViewModel(symbol: market.symbol)
         stockSummaryViewController.viewModel = stockViewModel
     }
